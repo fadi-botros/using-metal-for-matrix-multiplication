@@ -13,28 +13,9 @@
 		0DFA3C19269E12C600C8B05A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA3C17269E12C600C8B05A /* Main.storyboard */; };
 		0DFA3C1B269E12CA00C8B05A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA3C1A269E12CA00C8B05A /* Assets.xcassets */; };
 		0DFA3C1E269E12CA00C8B05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA3C1C269E12CA00C8B05A /* LaunchScreen.storyboard */; };
-		0DFA3C29269E12CB00C8B05A /* MatrixMultiplyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C28269E12CB00C8B05A /* MatrixMultiplyTests.swift */; };
-		0DFA3C34269E12CB00C8B05A /* MatrixMultiplyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C33269E12CB00C8B05A /* MatrixMultiplyUITests.swift */; };
 		0DFA3C42269E130300C8B05A /* MatrixMultiply.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C41269E130300C8B05A /* MatrixMultiply.metal */; };
 		0DFA3C44269E15A000C8B05A /* MatrixMultiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C43269E15A000C8B05A /* MatrixMultiplier.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0DFA3C25269E12CB00C8B05A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DFA3C06269E12C600C8B05A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DFA3C0D269E12C600C8B05A;
-			remoteInfo = MatrixMultiply;
-		};
-		0DFA3C30269E12CB00C8B05A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DFA3C06269E12C600C8B05A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DFA3C0D269E12C600C8B05A;
-			remoteInfo = MatrixMultiply;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0DFA3C0E269E12C600C8B05A /* MatrixMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatrixMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,12 +26,6 @@
 		0DFA3C1A269E12CA00C8B05A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DFA3C1D269E12CA00C8B05A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DFA3C1F269E12CA00C8B05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DFA3C24269E12CB00C8B05A /* MatrixMultiplyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatrixMultiplyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DFA3C28269E12CB00C8B05A /* MatrixMultiplyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMultiplyTests.swift; sourceTree = "<group>"; };
-		0DFA3C2A269E12CB00C8B05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DFA3C2F269E12CB00C8B05A /* MatrixMultiplyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatrixMultiplyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DFA3C33269E12CB00C8B05A /* MatrixMultiplyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMultiplyUITests.swift; sourceTree = "<group>"; };
-		0DFA3C35269E12CB00C8B05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DFA3C41269E130300C8B05A /* MatrixMultiply.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MatrixMultiply.metal; sourceTree = "<group>"; };
 		0DFA3C43269E15A000C8B05A /* MatrixMultiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMultiplier.swift; sourceTree = "<group>"; };
 		0DFA3C45269F7C7600C8B05A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -65,20 +40,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0DFA3C21269E12CB00C8B05A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DFA3C2C269E12CB00C8B05A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,8 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				0DFA3C10269E12C600C8B05A /* MatrixMultiply */,
-				0DFA3C27269E12CB00C8B05A /* MatrixMultiplyTests */,
-				0DFA3C32269E12CB00C8B05A /* MatrixMultiplyUITests */,
 				0DFA3C0F269E12C600C8B05A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				0DFA3C0E269E12C600C8B05A /* MatrixMultiply.app */,
-				0DFA3C24269E12CB00C8B05A /* MatrixMultiplyTests.xctest */,
-				0DFA3C2F269E12CB00C8B05A /* MatrixMultiplyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,24 +77,6 @@
 			path = MatrixMultiply;
 			sourceTree = "<group>";
 		};
-		0DFA3C27269E12CB00C8B05A /* MatrixMultiplyTests */ = {
-			isa = PBXGroup;
-			children = (
-				0DFA3C28269E12CB00C8B05A /* MatrixMultiplyTests.swift */,
-				0DFA3C2A269E12CB00C8B05A /* Info.plist */,
-			);
-			path = MatrixMultiplyTests;
-			sourceTree = "<group>";
-		};
-		0DFA3C32269E12CB00C8B05A /* MatrixMultiplyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0DFA3C33269E12CB00C8B05A /* MatrixMultiplyUITests.swift */,
-				0DFA3C35269E12CB00C8B05A /* Info.plist */,
-			);
-			path = MatrixMultiplyUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,42 +97,6 @@
 			productReference = 0DFA3C0E269E12C600C8B05A /* MatrixMultiply.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0DFA3C23269E12CB00C8B05A /* MatrixMultiplyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0DFA3C3B269E12CB00C8B05A /* Build configuration list for PBXNativeTarget "MatrixMultiplyTests" */;
-			buildPhases = (
-				0DFA3C20269E12CB00C8B05A /* Sources */,
-				0DFA3C21269E12CB00C8B05A /* Frameworks */,
-				0DFA3C22269E12CB00C8B05A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0DFA3C26269E12CB00C8B05A /* PBXTargetDependency */,
-			);
-			name = MatrixMultiplyTests;
-			productName = MatrixMultiplyTests;
-			productReference = 0DFA3C24269E12CB00C8B05A /* MatrixMultiplyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0DFA3C2E269E12CB00C8B05A /* MatrixMultiplyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0DFA3C3E269E12CB00C8B05A /* Build configuration list for PBXNativeTarget "MatrixMultiplyUITests" */;
-			buildPhases = (
-				0DFA3C2B269E12CB00C8B05A /* Sources */,
-				0DFA3C2C269E12CB00C8B05A /* Frameworks */,
-				0DFA3C2D269E12CB00C8B05A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0DFA3C31269E12CB00C8B05A /* PBXTargetDependency */,
-			);
-			name = MatrixMultiplyUITests;
-			productName = MatrixMultiplyUITests;
-			productReference = 0DFA3C2F269E12CB00C8B05A /* MatrixMultiplyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,14 +108,6 @@
 				TargetAttributes = {
 					0DFA3C0D269E12C600C8B05A = {
 						CreatedOnToolsVersion = 12.5.1;
-					};
-					0DFA3C23269E12CB00C8B05A = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 0DFA3C0D269E12C600C8B05A;
-					};
-					0DFA3C2E269E12CB00C8B05A = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 0DFA3C0D269E12C600C8B05A;
 					};
 				};
 			};
@@ -230,8 +125,6 @@
 			projectRoot = "";
 			targets = (
 				0DFA3C0D269E12C600C8B05A /* MatrixMultiply */,
-				0DFA3C23269E12CB00C8B05A /* MatrixMultiplyTests */,
-				0DFA3C2E269E12CB00C8B05A /* MatrixMultiplyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,20 +137,6 @@
 				0DFA3C1E269E12CA00C8B05A /* LaunchScreen.storyboard in Resources */,
 				0DFA3C1B269E12CA00C8B05A /* Assets.xcassets in Resources */,
 				0DFA3C19269E12C600C8B05A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DFA3C22269E12CB00C8B05A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DFA3C2D269E12CB00C8B05A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,36 +155,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0DFA3C20269E12CB00C8B05A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DFA3C29269E12CB00C8B05A /* MatrixMultiplyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DFA3C2B269E12CB00C8B05A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DFA3C34269E12CB00C8B05A /* MatrixMultiplyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0DFA3C26269E12CB00C8B05A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0DFA3C0D269E12C600C8B05A /* MatrixMultiply */;
-			targetProxy = 0DFA3C25269E12CB00C8B05A /* PBXContainerItemProxy */;
-		};
-		0DFA3C31269E12CB00C8B05A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0DFA3C0D269E12C600C8B05A /* MatrixMultiply */;
-			targetProxy = 0DFA3C30269E12CB00C8B05A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0DFA3C17269E12C600C8B05A /* Main.storyboard */ = {
@@ -481,86 +331,6 @@
 			};
 			name = Release;
 		};
-		0DFA3C3C269E12CB00C8B05A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MatrixMultiplyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.experiments.MatrixMultiplyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatrixMultiply.app/MatrixMultiply";
-			};
-			name = Debug;
-		};
-		0DFA3C3D269E12CB00C8B05A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MatrixMultiplyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.experiments.MatrixMultiplyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatrixMultiply.app/MatrixMultiply";
-			};
-			name = Release;
-		};
-		0DFA3C3F269E12CB00C8B05A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MatrixMultiplyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.experiments.MatrixMultiplyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MatrixMultiply;
-			};
-			name = Debug;
-		};
-		0DFA3C40269E12CB00C8B05A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MatrixMultiplyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.experiments.MatrixMultiplyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MatrixMultiply;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,24 +348,6 @@
 			buildConfigurations = (
 				0DFA3C39269E12CB00C8B05A /* Debug */,
 				0DFA3C3A269E12CB00C8B05A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0DFA3C3B269E12CB00C8B05A /* Build configuration list for PBXNativeTarget "MatrixMultiplyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0DFA3C3C269E12CB00C8B05A /* Debug */,
-				0DFA3C3D269E12CB00C8B05A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0DFA3C3E269E12CB00C8B05A /* Build configuration list for PBXNativeTarget "MatrixMultiplyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0DFA3C3F269E12CB00C8B05A /* Debug */,
-				0DFA3C40269E12CB00C8B05A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
