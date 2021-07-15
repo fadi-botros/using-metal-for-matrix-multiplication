@@ -1,6 +1,6 @@
 # Using Metal for Matrix Multiplication
 
-***WARNING: This mini demo application is written in unsafe technologies, functions like `vm_allocate`, `vm_deallocate` are unsafe and using them incorrectly would lead to potential Remote Code Execution on devices using the application written in them, so, before learning from this application, read carefully the documentation of `vm_allocate`, `vm_deallocate` and read how to manage memory in Metal applications and in Swift***
+***WARNING: This mini demo application is written in unsafe technologies, functions like `vm_allocate`, `vm_deallocate` are unsafe and using them incorrectly would lead to very dangerous vulnerabilities (like Use-After-Free, Buffer-Overflow) using the application written in them, so, before learning from this application, read carefully the documentation of `vm_allocate`, `vm_deallocate` and read how to manage memory in Metal applications and in Swift***
 
 ***Any code reviews containing safety/security corrections are welcome***
 
