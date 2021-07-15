@@ -8,5 +8,7 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
+#include "constants.h"
+
 
 #endif /* BridgingHeader_h */

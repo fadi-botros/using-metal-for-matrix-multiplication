@@ -15,6 +15,8 @@
 		0DFA3C1E269E12CA00C8B05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA3C1C269E12CA00C8B05A /* LaunchScreen.storyboard */; };
 		0DFA3C29269E12CB00C8B05A /* MatrixMultiplyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C28269E12CB00C8B05A /* MatrixMultiplyTests.swift */; };
 		0DFA3C34269E12CB00C8B05A /* MatrixMultiplyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C33269E12CB00C8B05A /* MatrixMultiplyUITests.swift */; };
+		0DFA3C42269E130300C8B05A /* MatrixMultiply.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C41269E130300C8B05A /* MatrixMultiply.metal */; };
+		0DFA3C44269E15A000C8B05A /* MatrixMultiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA3C43269E15A000C8B05A /* MatrixMultiplier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		0DFA3C2F269E12CB00C8B05A /* MatrixMultiplyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatrixMultiplyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFA3C33269E12CB00C8B05A /* MatrixMultiplyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMultiplyUITests.swift; sourceTree = "<group>"; };
 		0DFA3C35269E12CB00C8B05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DFA3C41269E130300C8B05A /* MatrixMultiply.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MatrixMultiply.metal; sourceTree = "<group>"; };
+		0DFA3C43269E15A000C8B05A /* MatrixMultiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixMultiplier.swift; sourceTree = "<group>"; };
+		0DFA3C45269F7C7600C8B05A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		0DFA3C46269F7CD400C8B05A /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		0DFA3C10269E12C600C8B05A /* MatrixMultiply */ = {
 			isa = PBXGroup;
 			children = (
+				0DFA3C45269F7C7600C8B05A /* BridgingHeader.h */,
 				0DFA3C11269E12C600C8B05A /* AppDelegate.swift */,
 				0DFA3C13269E12C600C8B05A /* SceneDelegate.swift */,
 				0DFA3C15269E12C600C8B05A /* ViewController.swift */,
@@ -106,6 +113,9 @@
 				0DFA3C1A269E12CA00C8B05A /* Assets.xcassets */,
 				0DFA3C1C269E12CA00C8B05A /* LaunchScreen.storyboard */,
 				0DFA3C1F269E12CA00C8B05A /* Info.plist */,
+				0DFA3C41269E130300C8B05A /* MatrixMultiply.metal */,
+				0DFA3C43269E15A000C8B05A /* MatrixMultiplier.swift */,
+				0DFA3C46269F7CD400C8B05A /* constants.h */,
 			);
 			path = MatrixMultiply;
 			sourceTree = "<group>";
@@ -260,6 +270,8 @@
 			files = (
 				0DFA3C16269E12C600C8B05A /* ViewController.swift in Sources */,
 				0DFA3C12269E12C600C8B05A /* AppDelegate.swift in Sources */,
+				0DFA3C44269E15A000C8B05A /* MatrixMultiplier.swift in Sources */,
+				0DFA3C42269E130300C8B05A /* MatrixMultiply.metal in Sources */,
 				0DFA3C14269E12C600C8B05A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +456,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.experiments.MatrixMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MatrixMultiply/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,6 +475,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.experiments.MatrixMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MatrixMultiply/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
