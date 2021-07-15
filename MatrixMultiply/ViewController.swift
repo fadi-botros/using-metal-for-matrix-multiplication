@@ -8,10 +8,54 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    func calculateAndCheckEquality(multiplierUsingMetal: MatrixMultiplierMetal,
+                                   matrix1: MutableMatrix,
+                                   matrix2: MutableMatrix) {
+        let matrix1Immutable = Matrix(wrapee: matrix1)
+        let matrix2Immutable = Matrix(wrapee: matrix2)
+        
+        let startOfGPUCalculation = Date()
+        
+        multiplierUsingMetal.multiply(
+            matrix1: matrix1Immutable,
+            matrix2: matrix2Immutable,
+            completionHandler: { resultFirst in
+                print("Finished GPU version in \(Date().timeIntervalSince(startOfGPUCalculation))")
+                let startOfCPUCalculation = Date()
+                MatrixMultipliesMaths().multiply(
+                    matrix1: matrix1Immutable,
+                    matrix2: matrix2Immutable,
+                    completionHandler: { resultSecond in
+                        print("Finished CPU version in \(Date().timeIntervalSince(startOfCPUCalculation))")
+                        if resultFirst.height != resultSecond.height &&
+                            resultFirst.width != resultSecond.width {
+                            print("NOT EQUAL")
+                            return
+                        }
+                        for x in 0..<resultFirst.width {
+                            for y in 0..<resultFirst.height {
+                                // Use epsilon comparison, so that a small margin of error is allowed so that random false "unequals" won't happen
+                                if abs(resultFirst[x, y] - resultSecond[x, y]) > 0.001 {
+                                    print("NOT EQUAL")
+                                    return
+                                }
+                            }
+                        }
+                        print("Equal")
+                    })
+            })
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        guard let defaultDevice = MTLCreateSystemDefaultDevice(),
+              let matrixMultiplierMetal = MatrixMultiplierMetal(device: defaultDevice) else {
+            return
+        }
         
         let matrix1 = MutableMatrix(width: 3, height: 3)
         let matrix2 = MutableMatrix(width: 3, height: 3)
@@ -24,44 +68,13 @@ class ViewController: UIViewController {
         matrix2[0, 1] = 6; matrix2[1, 1] = 5; matrix2[2, 1] = 6
         matrix2[0, 2] = 10; matrix2[1, 2] = 8; matrix2[2, 2] = 9
 
-        let matrix1Immutable = Matrix(wrapee: matrix1)
-        let matrix2Immutable = Matrix(wrapee: matrix2)
-        
-        guard let defaultDevice = MTLCreateSystemDefaultDevice(),
-              let matrixMultiplierMetal = MatrixMultiplierMetal(device: defaultDevice) else {
-            return
-        }
-        
-        matrixMultiplierMetal.multiply(
-            matrix1: matrix1Immutable,
-            matrix2: matrix2Immutable,
-            completionHandler: { result in
-                for x in 0..<result.width {
-                    for y in 0..<result.height {
-                        print(result[x, y])
-                    }
-                    print("---")
-                }
-                MatrixMultipliesMaths().multiply(
-                    matrix1: matrix1Immutable,
-                    matrix2: matrix2Immutable,
-                    completionHandler: { result in
-                        for x in 0..<result.width {
-                            for y in 0..<result.height {
-                                print(result[x, y])
-                            }
-                            print("---")
-                        }
-                    })
-            })
-        
+        calculateAndCheckEquality(multiplierUsingMetal: matrixMultiplierMetal,
+                                  matrix1: matrix1,
+                                  matrix2: matrix2)
         
         let matrix3 = MutableMatrix(width: 300, height: 300)
         let matrix4 = MutableMatrix(width: 300, height: 300)
 
-        let matrix3Immutable = Matrix(wrapee: matrix3)
-        let matrix4Immutable = Matrix(wrapee: matrix4)
-        
         for x in 0..<300 {
             for y in 0..<300 {
                 matrix3[x, y] = Float32(arc4random() % 100)
@@ -69,36 +82,11 @@ class ViewController: UIViewController {
             }
         }
         
-        guard let defaultDevice = MTLCreateSystemDefaultDevice(),
-              let matrixMultiplierMetal = MatrixMultiplierMetal(device: defaultDevice) else {
-            return
-        }
+        calculateAndCheckEquality(multiplierUsingMetal: matrixMultiplierMetal,
+                                  matrix1: matrix3,
+                                  matrix2: matrix4)
         
-        matrixMultiplierMetal.multiply(
-            matrix1: matrix3Immutable,
-            matrix2: matrix4Immutable,
-            completionHandler: { resultFirst in
-                print("Finished")
-                MatrixMultipliesMaths().multiply(
-                    matrix1: matrix3Immutable,
-                    matrix2: matrix4Immutable,
-                    completionHandler: { resultSecond in
-                        print("Finished")
-                        if resultFirst.height != resultSecond.height &&
-                            resultFirst.width != resultSecond.width {
-                            print("NOT EQUAL")
-                            return
-                        }
-                        for x in 0..<300 {
-                            for y in 0..<300 {
-                                if resultFirst[x, y] != resultSecond[x, y] {
-                                    print("NOT EQUAL")
-                                }
-                            }
-                        }
-                        print("Equal")
-                    })
-            })
+
     }
 
 

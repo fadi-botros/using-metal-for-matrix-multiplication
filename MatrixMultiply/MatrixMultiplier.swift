@@ -8,9 +8,13 @@
 import UIKit
 
 class VMMemory {
+    static func align(size: Int, by alignment: Int) -> Int {
+        return ((size / 4096) + 1) * 4096
+    }
+    
     static func allocate(size: Int) -> Data? {
         var address: vm_address_t = 0
-        let bufferFullSize = vm_size_t(((size / 4096) + 1) * 4096)
+        let bufferFullSize = vm_size_t(VMMemory.align(size: size, by: 4096))
         vm_allocate(mach_task_self_,
                     &address,
                     bufferFullSize,
@@ -26,6 +30,7 @@ class VMMemory {
             return nil
         }
         return Data(bytesNoCopy: pointer, count: size, deallocator: Data.Deallocator.custom({_,_ in
+            print("Deallocating buffer")
             vm_deallocate(mach_task_self_, address, bufferFullSize)
         }))
     }
@@ -80,11 +85,13 @@ extension MutableMatrix {
     func unsafeMakeBuffer(with device: MTLDevice) -> MTLBuffer? {
         return data.withUnsafeMutableBytes { buffer in
             guard let address = buffer.baseAddress else { return nil }
-            let memSize = (Int(size.width) * Int(size.height) * (32/8))
+            let float32Size = (32/8)
+            let memSize = (Int(size.width) * Int(size.height) * float32Size)
             return device.makeBuffer(bytesNoCopy: address,
-                                     length: Int(((memSize / 4096) + 1) * 4096),
+                                     length: VMMemory.align(size: memSize, by: 4096),
                                      options: [.cpuCacheModeWriteCombined, .storageModeShared],
                                      deallocator: { _,_  in
+                                        print("Deallocating data")
                                         _ = self
                                      })
         }
@@ -181,6 +188,10 @@ class MatrixMultiplierMetal: MatrixMultiplier {
         
         parameters.assignToEncoder(commandEncoder: commandEncoder)
         
+        // TODO: For better practice, use `device.maxThreadsPerThreadgroup`
+        // and make threads as much as a group can use, instead of making
+        // a thread for each group like this
+        
         commandEncoder.dispatchThreadgroups(
             MTLSize(width: resultMatrix.width,
                     height: resultMatrix.height,
@@ -190,18 +201,7 @@ class MatrixMultiplierMetal: MatrixMultiplier {
                 height: 1,
                 depth: 1))
         
-//        commandEncoder.dispatchThreadgroups(
-//            MTLSize(
-//                width: 1,
-//                height: 1,
-//                depth: 1),
-//            threadsPerThreadgroup: MTLSize(width: resultMatrix.width,
-//                    height: resultMatrix.height,
-//                    depth: 1))
-        
         commandBuffer.addCompletedHandler { a in
-//            print(resultBuffer.contents().assumingMemoryBound(to: Float.self).advanced(by: 3).pointee)
-            print(a.error.flatMap { ($0 as NSError).code })
             completionHandler(Matrix(wrapee: resultMatrix))
         }
         commandEncoder.endEncoding()
